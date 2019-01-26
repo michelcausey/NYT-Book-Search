@@ -93,7 +93,7 @@ class App extends Component {
           <Row>
             <Col size="xs-12">
               {!this.state.books.length ? (
-                <h1 className="text-center">No Books to Display</h1>
+                <h1 className="text-center">Search Above For A Book</h1>
               ) : (
                 <BookList>
                   {this.state.books.map(book => {

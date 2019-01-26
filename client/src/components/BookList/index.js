@@ -31,6 +31,7 @@ export function BookListItem({
               View
             </a></button>
             <SaveBtn/>
+            <DeleteBtn/>
           </Col>
         </Row>
       </Container>
