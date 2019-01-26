@@ -4,6 +4,7 @@ import axios from "axios";
 // It accepts a "query" or term to search the recipe api for
 export default {
   getBooks: function(query) {
-    return axios.get("/api/books", { params: { q: query } });
+    console.log(query)
+    return axios.get("/api/books", { params: { q: "title: " + query } });
   }
 };

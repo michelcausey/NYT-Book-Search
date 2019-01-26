@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   loadBooks = () => {
-    API.getBooks()
+    API.getBooks("Harry Potter")
       .then(res =>
         this.setState({ books: res.data, bookSearch: "" })
       )
