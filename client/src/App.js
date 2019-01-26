@@ -90,6 +90,7 @@ class App extends Component {
               </form>
             </Col>
           </Row>
+          <br></br>
           <Row>
             <Col size="xs-12">
               {!this.state.books.length ? (
