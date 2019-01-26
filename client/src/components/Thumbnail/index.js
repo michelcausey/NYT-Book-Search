@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 // The Thumbnail component renders a div that uses some CSS to render a background image
 // It will always keep square proportions at any size without the image warping
@@ -8,7 +9,7 @@ function Thumbnail({ src }) {
     <div
       className="thumbnail"
       role="img"
-      aria-label="Book Image"
+      aria-label="Recipe Image"
       style={{
         backgroundImage: `url(${src})`
       }}

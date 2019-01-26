@@ -3,11 +3,10 @@ import "./style.css";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-light"> <h2>Google Books Search App</h2>
+    <nav className="navbar navbar-dark bg-dark">
       <a className="navbar-brand" href="/">
-        Search Page
+        Google Book Search
       </a>
-      <a className = "navbar-brand" href="/api/books">My Saved Books</a>
     </nav>
   );
 }
