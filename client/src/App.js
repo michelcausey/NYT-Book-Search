@@ -28,6 +28,9 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
+  // create a getBooksFromDB so that the SAVED books can be displayed from the DB
+  // then loadBooks will be from the database instead
+
   deleteBook = id => {
     API.deleteBook(id)
       .then(res => this.loadBooks())
@@ -53,6 +56,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state.bookSearch)
     return (
       <div>
         <Nav />
@@ -107,6 +111,18 @@ class App extends Component {
               ) : (
                 <BookList>
                   {this.state.books.map(book => {
+                    //console.log(book.volumeInfo.imageLinks)
+                    let imageLink
+                    // console.log(imageLink)
+
+                    if (book.volumeInfo.imageLinks.smallThumbnail) {
+                      imageLink = book.volumeInfo.imageLinks.smallThumbnail
+                    } else if (book.volumeInfo.imageLinks.thumbnail) {
+                      imageLink = book.volumeInfo.imageLinks.thumbnail 
+                    } else {
+                      imageLink = "https://placehold.it/200x200"
+                    }
+
                     return (
                       <BookListItem
                         key={book.id}
@@ -114,7 +130,7 @@ class App extends Component {
                         title={book.volumeInfo.title}
                         link={book.volumeInfo.infoLink}
                         description={book.volumeInfo.description}
-                        image={book.volumeInfo.imageLinks.smallThumbnail}
+                        image={imageLink}
                       />
                     );
                   })}
