@@ -1,7 +1,7 @@
 const axios = require("axios");
 const router = require("express").Router();
 
-// const stringify = require('json-stringify-safe')
+const stringify = require('json-stringify-safe')
 
 router.get("/books", (req, res) => {
   axios
@@ -11,4 +11,3 @@ router.get("/books", (req, res) => {
 });
 
 module.exports = router;
-

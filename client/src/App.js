@@ -47,6 +47,7 @@ class App extends Component {
     // When the form is submitted, prevent its default behavior, get books update the books state
     event.preventDefault();
     console.log(this.state.bookSearch)
+    console.log("searching")
     API.getBooks(this.state.bookSearch)
       .then(res => this.setState({ books: res.data }))
       .catch(err => console.log(err));
@@ -94,7 +95,7 @@ class App extends Component {
           <Row>
             <Col size="xs-12">
               {!this.state.books.length ? (
-                <h1 className="text-center">Search Above For A Book</h1>
+                <h4 className="text-center">Search Above For A Book</h4>
               ) : (
                 <BookList>
                   {this.state.books.map(book => {
