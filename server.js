@@ -5,6 +5,10 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const apiRoutes = require("./routes/apiRoutes");
 
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+mongoose.connect(MONGODB_URI);
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -12,6 +16,8 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+
 
 // Use apiRoutes
 app.use("/api", apiRoutes);
